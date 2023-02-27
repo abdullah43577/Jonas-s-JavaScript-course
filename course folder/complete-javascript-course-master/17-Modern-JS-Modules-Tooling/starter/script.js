@@ -67,8 +67,6 @@ console.log(ShoppingCart2.shippingCost);
 import cloneDeep from '../../node_modules/lodash-es/cloneDeep.js';
 console.log(cloneDeep);
 
-// import cloneDeep from 'lodash-es';
-
 const state = {
   cart: [
     { product: 'bread', quantity: 5 },
