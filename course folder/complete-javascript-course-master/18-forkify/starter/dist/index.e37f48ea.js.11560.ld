@@ -595,6 +595,7 @@ const controlSearchResults = async function() {
         // 2) Load search results
         await _model.loadSearchResults(query);
         // 3) Render results
+        console.log(_model.state.search.results);
         (0, _resultsViewDefault.default).render(_model.state.search.results);
     } catch (err) {
         console.log(err);
@@ -2670,6 +2671,9 @@ class RecipeView extends (0, _viewDefault.default) {
             </div>
 
             <div class="recipe__user-generated">
+              <svg>
+                <use href="${0, _iconsSvgDefault.default}#icon-user"></use>
+              </svg>
             </div>
             <button class="btn--round">
               <svg class="">
@@ -3019,7 +3023,6 @@ var _iconsSvg = require("../../img/icons.svg");
 var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 class View {
     render(data) {
-        if (!data || Array.isArray(data) && data.length === 0) return this.renderError();
         this._data = data;
         const markup = this._generateMarkup();
         this._clear();
@@ -3067,7 +3070,7 @@ class View {
 }
 exports.default = View;
 
-},{"../../img/icons.svg":"cMpiy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"Y4A21":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../img/icons.svg":"cMpiy"}],"Y4A21":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "state", ()=>state);
@@ -3213,8 +3216,6 @@ var _iconsSvg = require("url:../../img/icons.svg");
 var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 class ResultView extends (0, _viewDefault.default) {
     _parentElement = document.querySelector(".results");
-    _errorMessage = "No recipes found for you query! please try again!";
-    _message = "";
     _generateMarkup() {
         return this._data.map(this._generateMarkupPreview).join("");
     }
@@ -3236,7 +3237,7 @@ class ResultView extends (0, _viewDefault.default) {
 }
 exports.default = new ResultView();
 
-},{"./view ":"4wVyX","url:../../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"loVOp":[function(require,module,exports) {
+},{"./view ":"4wVyX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","url:../../img/icons.svg":"loVOp"}],"loVOp":[function(require,module,exports) {
 module.exports = require("496987da9c44b064").getBundleURL("hWUTQ") + "icons.dfd7a6db.svg" + "?" + Date.now();
 
 },{"496987da9c44b064":"lgJ39"}]},["d8XZh","aenu9"], "aenu9", "parcelRequire3a11")
